@@ -10,6 +10,7 @@ open class SampleController {
     @GetMapping("/helloSuspend")
     open suspend fun helloSuspend() : String {
         delay(1)
+        println("helloSuspend")
         return "hello"
     }
 
@@ -21,6 +22,7 @@ open class SampleController {
 
     @GetMapping("/hello")
     open fun hello() : Mono<String> {
+        println("hello")
         return Mono.just("hello");
     }
 
